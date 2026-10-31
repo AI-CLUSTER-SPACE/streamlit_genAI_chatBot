@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+
+metadata:
+  name: speedy-chatbot
+  namespace: speedrockets19-dev
+
+spec:
+  to:
+    kind: Service
+    name: speedy-chatbot
+
+  port:
+    targetPort: http
+
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
